@@ -4,10 +4,12 @@ import PrimeVue from 'primevue/config'
 import { definePreset } from '@primevue/themes'
 import 'primeicons/primeicons.css'
 import './assets/main.css'
-
+import router from './router'
 import Aura from '@primevue/themes/aura'
 
 const app = createApp(App)
+
+app.use(router)
 
 const Violet = definePreset(Aura, {
   semantic: {
