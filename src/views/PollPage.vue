@@ -22,9 +22,8 @@
             <TrueFalseQuestion
                 question="Kıyafeti satın aldıktan sonra, ürünün genel kalitesine dair herhangi bir olumsuz deneyim yaşadınız mı?"
                 v-model="form.true_false_question_6" />
-            <InputQuestion question="Ürünü alırken fiyat beklentiniz ne kadardı?"
-                v-model="form.client_expected_price" />
-            <RatingQuestion question="Ürünümüze genel değerlendirmeniz kaç puan olurdu?" v-model="form.client_rating" />
+            <InputQuestion question="Ürünü alırken fiyat beklentiniz ne kadardı?" v-model="form.expected_price" />
+            <RatingQuestion question="Ürünümüze genel değerlendirmeniz kaç puan olurdu?" v-model="form.rating" />
         </div>
         <div class="button-bar">
             <Button @click="submitPoll">Anketi Tamamla</Button>
@@ -51,8 +50,8 @@ const pollID = route.params.pollID;
 const form = ref({
     client_birthdate: null,
     client_gender: null,
-    client_rating: null,
-    client_expected_price: null,
+    rating: null,
+    expected_price: null,
     true_false_question_1: null,
     true_false_question_2: null,
     true_false_question_3: null,
@@ -75,8 +74,8 @@ onMounted(async () => {
 
         form.value.client_birthdate = data.client_birthdate || null;
         form.value.client_gender = data.client_gender || null;
-        form.value.client_rating = data.client_rating || null;
-        form.value.client_expected_price = data.client_expected_price || null;
+        form.value.rating = data.rating || null;
+        form.value.expected_price = data.expected_price || null;
         form.value.true_false_question_1 = data.true_false_question_1 || null;
         form.value.true_false_question_2 = data.true_false_question_2 || null;
         form.value.true_false_question_3 = data.true_false_question_3 || null;
@@ -102,8 +101,8 @@ const submitPoll = async () => {
     if (
         !form.value.client_gender ||
         !form.value.client_birthdate ||
-        form.value.client_rating === null ||
-        form.value.client_expected_price === null
+        form.value.rating === null ||
+        form.value.expected_price === null
     ) {
         console.log(form.value);
         alert('Lütfen tüm alanları doldurun.');
