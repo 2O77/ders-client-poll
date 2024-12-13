@@ -135,7 +135,6 @@ const submitPoll = async () => {
 <style>
 .title-bar {
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 .product-info {
