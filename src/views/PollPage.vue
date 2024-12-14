@@ -4,7 +4,6 @@
             <h1>Ürün Memnuniyet Anketi</h1>
             <p><strong>Ürün Türü:</strong> {{ product.type }}</p>
             <p><strong>Ürün Boyutu:</strong> {{ product.size }}</p>
-            <p><strong>Ürün Fiyatı:</strong> {{ product.price }} tl</p>
         </div>
         <div class="questions-bar">
             <AgeQuestion v-model="form.client_birthdate" />
