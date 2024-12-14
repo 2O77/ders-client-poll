@@ -6,6 +6,10 @@
             <p><strong>Ürün Boyutu:</strong> {{ product.size }}</p>
         </div>
         <div class="questions-bar">
+            <div style="display: flex; justify-content: center; align-items: center; height: 100px">
+                <link rel="stylesheet" href="">
+                <a href="/" class="back-link">Anasayfaya Dön</a>
+            </div>
             <AgeQuestion v-model="form.client_birthdate" />
             <GenderQuestion v-model="form.client_gender" />
             <TrueFalseQuestion question="Bu kıyafeti alırken kalite beklentiniz karşılandı mı?"
