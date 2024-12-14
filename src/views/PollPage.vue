@@ -93,6 +93,7 @@ onMounted(async () => {
         } else {
             console.error('Anket verileri yüklenemedi:', error);
             alert('Anket verileri yüklenirken bir hata oluştu.');
+            router.push('/');
         }
     }
 });
